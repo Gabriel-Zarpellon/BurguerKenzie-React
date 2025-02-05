@@ -42,13 +42,22 @@ function App() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [counter, setCounter] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("@CARTLIST", JSON.stringify(cartList));
 
-    let cartItems = cartList.map((item) => item.qty);
+    function setQty() {
+      let cartItems = cartList.map((item) => item.qty);
 
-    setCounter(cartItems.reduce((total, qty) => total + qty, 0));
+      let cartPrices = cartList.map((item) => item.qty * item.price);
+
+      console.log(cartPrices);
+
+      setTotalPrice(cartPrices.reduce((total, price) => total + price, 0));
+      setCounter(cartItems.reduce((total, qty) => total + qty, 0));
+    }
+    setQty();
   }, [cartList]);
 
   function addToCart(product) {
@@ -67,16 +76,22 @@ function App() {
   }
 
   function removeFromCart(id) {
-    let updatedCartList = cartList;
+    let updatedCartList = [];
     const found = cartList.findIndex((cartItem) => cartItem.id == id);
 
     if (cartList[found].qty > 1) {
-      updatedCartList[found].qty = updatedCartList[found].qty - 1;
+      updatedCartList = cartList.map((cartItem) =>
+        cartItem.id == id ? { ...cartItem, qty: cartItem.qty - 1 } : cartItem
+      );
     } else {
-      updatedCartList.filter((cartItem) => cartItem.id != found);
+      updatedCartList = updatedCartList.filter((cartItem) => cartItem.id != id);
     }
 
     setCartList(updatedCartList);
+  }
+
+  function clearCart() {
+    setCartList([]);
   }
 
   return (
@@ -88,7 +103,13 @@ function App() {
         <ProductSection products={products} addToCart={addToCart} />
       )}
       {isOpen ? (
-        <CartModal setIsOpen={setIsOpen} removeFromCart={removeFromCart} />
+        <CartModal
+          setIsOpen={setIsOpen}
+          removeFromCart={removeFromCart}
+          cartList={cartList}
+          totalPrice={totalPrice}
+          clearCart={clearCart}
+        />
       ) : null}
     </>
   );

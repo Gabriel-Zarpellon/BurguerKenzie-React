@@ -1,6 +1,6 @@
 import { IoClose } from "react-icons/io5";
 
-export function Modal({ children, total, setIsOpen }) {
+export function Modal({ children, totalPrice, setIsOpen, clearCart }) {
   return (
     <div role="dialog">
       <div>
@@ -14,12 +14,13 @@ export function Modal({ children, total, setIsOpen }) {
         <div>
           <p>Total</p>
           <p>
-            {total.toLocaleString("pt-BR", {
+            {totalPrice.toLocaleString("pt-BR", {
               style: "currency",
               currency: "BRL",
             })}
           </p>
         </div>
+        <button onClick={() => clearCart()}>Remover todos</button>
       </div>
     </div>
   );

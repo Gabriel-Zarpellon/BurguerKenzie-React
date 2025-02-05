@@ -1,17 +1,27 @@
 import { Modal } from "../Modal";
 import { CartCard } from "./CartCard";
 
-export function CartModal({ cartList, setIsOpen, removeFromCart }) {
+export function CartModal({
+  cartList,
+  setIsOpen,
+  removeFromCart,
+  totalPrice,
+  clearCart,
+}) {
   return (
-    <Modal setIsOpen={setIsOpen}>
+    <Modal setIsOpen={setIsOpen} totalPrice={totalPrice} clearCart={clearCart}>
       <ul>
-        {cartList.map((product) => (
-          <CartCard
-            key={product.id}
-            product={product}
-            removeFromCart={removeFromCart}
-          />
-        ))}
+        {cartList.length > 0 ? (
+          cartList.map((product) => (
+            <CartCard
+              key={product.id}
+              product={product}
+              removeFromCart={removeFromCart}
+            />
+          ))
+        ) : (
+          <h1>Seu carrinho está vazio</h1>
+        )}
       </ul>
     </Modal>
   );

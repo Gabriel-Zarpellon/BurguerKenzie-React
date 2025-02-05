@@ -13,8 +13,9 @@ export function CartCard({ product, removeFromCart }) {
             <FaTrash size={21} />
           </button>
         </div>
+        <p>x{product.qty}</p>
         <p>
-          {product.price.toLocaleString("pt-BR", {
+          {(product.price * product.qty).toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",
           })}
