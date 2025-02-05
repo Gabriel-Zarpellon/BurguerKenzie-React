@@ -3,9 +3,9 @@ export function ProductCard({ product, addToCart }) {
     <li>
       <img src={product.img} alt={product.name} />
       <div>
-        <h1>{product.name}</h1>
-        <p>{product.category}</p>
-        <p>
+        <h1 className="title">{product.name}</h1>
+        <p className="paragraph">{product.category}</p>
+        <p className="paragraph green">
           {product.price.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",

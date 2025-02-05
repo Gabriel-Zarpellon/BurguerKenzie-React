@@ -8,13 +8,13 @@ export function CartCard({ product, removeFromCart }) {
       </div>
       <div>
         <div>
-          <h1>{product.name}</h1>
+          <h1 className="title">{product.name}</h1>
           <button onClick={() => removeFromCart(product.id)}>
             <FaTrash size={21} />
           </button>
         </div>
-        <p>x{product.qty}</p>
-        <p>
+        <p className="paragraph">x{product.qty}</p>
+        <p className="paragraph green">
           {(product.price * product.qty).toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",

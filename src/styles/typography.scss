@@ -1,0 +1,25 @@
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-title);
+}
+
+.title.white {
+  color: var(--color-white);
+}
+
+.paragraph {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-paragraph);
+}
+
+.paragraph.total {
+  font-weight: 600;
+  color: var(--color-title);
+}
+
+.paragraph.green {
+  font-weight: 600;
+  color: var(--color-green);
+}

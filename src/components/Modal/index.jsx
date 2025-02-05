@@ -4,7 +4,7 @@ export function Modal({ children, totalPrice, setIsOpen, clearCart }) {
   return (
     <div role="dialog">
       <div>
-        <h1>Carrinho de compras</h1>
+        <h1 className="title white">Carrinho de compras</h1>
         <button onClick={() => setIsOpen(false)}>
           <IoClose size={21} />
         </button>
@@ -12,8 +12,8 @@ export function Modal({ children, totalPrice, setIsOpen, clearCart }) {
       <div>{children}</div>
       <div>
         <div>
-          <p>Total</p>
-          <p>
+          <p className="paragraph">Total</p>
+          <p className="paragraph total">
             {totalPrice.toLocaleString("pt-BR", {
               style: "currency",
               currency: "BRL",

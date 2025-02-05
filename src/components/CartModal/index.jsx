@@ -20,7 +20,7 @@ export function CartModal({
             />
           ))
         ) : (
-          <h1>Seu carrinho está vazio</h1>
+          <h1 className="title">Seu carrinho está vazio</h1>
         )}
       </ul>
     </Modal>

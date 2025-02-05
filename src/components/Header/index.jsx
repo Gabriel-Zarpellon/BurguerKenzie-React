@@ -4,7 +4,7 @@ import { IoCart } from "react-icons/io5";
 export function Header({ setIsOpen, counter }) {
   return (
     <header>
-      <div>
+      <div className="container">
         <img src={Logo} alt="Burguer Kenzie Logo" />
         <div>
           <button onClick={() => setIsOpen(true)}>

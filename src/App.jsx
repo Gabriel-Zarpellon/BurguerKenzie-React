@@ -3,6 +3,7 @@ import { api } from "./services/api";
 import { Header } from "./components/Header";
 import { ProductSection } from "./components/ProductSection";
 import { CartModal } from "./components/CartModal";
+import "./styles/index.scss";
 
 function App() {
   // Product List Section
@@ -49,10 +50,7 @@ function App() {
 
     function setQty() {
       let cartItems = cartList.map((item) => item.qty);
-
       let cartPrices = cartList.map((item) => item.qty * item.price);
-
-      console.log(cartPrices);
 
       setTotalPrice(cartPrices.reduce((total, price) => total + price, 0));
       setCounter(cartItems.reduce((total, qty) => total + qty, 0));
