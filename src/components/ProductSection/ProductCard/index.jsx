@@ -1,8 +1,12 @@
+import styles from "./style.module.scss";
+
 export function ProductCard({ product, addToCart }) {
   return (
-    <li>
-      <img src={product.img} alt={product.name} />
-      <div>
+    <li className={styles.productCard}>
+      <div className={styles.imgBox}>
+        <img src={product.img} alt={product.name} />
+      </div>
+      <div className={styles.textBox}>
         <h1 className="title">{product.name}</h1>
         <p className="paragraph">{product.category}</p>
         <p className="paragraph green">

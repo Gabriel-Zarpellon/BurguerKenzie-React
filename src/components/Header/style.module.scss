@@ -1,0 +1,40 @@
+header {
+  height: clamp(4.75rem, 5vw, 5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+
+  & > div:first-child {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cartBox {
+    position: relative;
+
+    button {
+      color: var(--color-grey);
+    }
+
+    span {
+      width: 20px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: -6px;
+      top: -10px;
+      border-radius: 7px;
+
+      color: var(--color-white);
+      font-size: 14px;
+      font-weight: 900;
+
+      background-color: var(--color-green);
+    }
+  }
+}

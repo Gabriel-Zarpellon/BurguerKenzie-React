@@ -1,0 +1,25 @@
+.productCard {
+  height: 5rem;
+  display: flex;
+  gap: 1.25rem;
+
+  padding-inline: 14px;
+
+  .imgBox {
+    width: 5.1413rem;
+    height: 5rem;
+    background-color: var(--color-background);
+    border-radius: 5px;
+  }
+
+  .cardBottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > button {
+      color: var(--color-grey);
+    }
+  }
+}

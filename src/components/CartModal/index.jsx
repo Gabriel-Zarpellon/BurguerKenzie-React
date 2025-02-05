@@ -1,5 +1,6 @@
 import { Modal } from "../Modal";
 import { CartCard } from "./CartCard";
+import styles from "./style.module.scss";
 
 export function CartModal({
   cartList,
@@ -10,7 +11,7 @@ export function CartModal({
 }) {
   return (
     <Modal setIsOpen={setIsOpen} totalPrice={totalPrice} clearCart={clearCart}>
-      <ul>
+      <ul className={styles.cartList}>
         {cartList.length > 0 ? (
           cartList.map((product) => (
             <CartCard

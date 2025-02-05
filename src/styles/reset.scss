@@ -12,6 +12,10 @@ ol {
 button {
   cursor: pointer;
   border-style: none;
-  background-color: none;
+  background-color: transparent;
   font-family: inherit;
+}
+
+img {
+  max-width: 100%;
 }

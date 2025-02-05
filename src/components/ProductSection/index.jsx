@@ -1,10 +1,11 @@
 import { ProductCard } from "./ProductCard";
+import styles from "./style.module.scss";
 
 export function ProductSection({ products, addToCart }) {
   return (
-    <section>
+    <section className={styles.productSection}>
       <div className="container">
-        <ul>
+        <ul className={styles.listBox}>
           {products.map((product) => (
             <ProductCard
               key={product.id}

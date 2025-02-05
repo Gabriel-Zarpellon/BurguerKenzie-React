@@ -82,7 +82,7 @@ function App() {
         cartItem.id == id ? { ...cartItem, qty: cartItem.qty - 1 } : cartItem
       );
     } else {
-      updatedCartList = updatedCartList.filter((cartItem) => cartItem.id != id);
+      updatedCartList = cartList.filter((cartItem) => cartItem.id != id);
     }
 
     setCartList(updatedCartList);
